@@ -15,14 +15,18 @@
     "installer": {
         "script": [
             "Expand-7zipArchive \"$dir\\bandizip@5.17.exe\" \"$dir\" -Removal",
-            "regsvr32 /s \"$dir\\bdzshl64.dll\"",
-            "regsvr32 /s \"$dir\\bdzshl32.dll\""
+            "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /ve /d \"Bandizip Shell Extension\" /f",
+            "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\\InprocServer32\" /ve /d \"$dir\\bdzshl64.dll\" /f",
+            "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\\InprocServer32\" /v ThreadingModel /d Apartment /f",
+            "reg add \"HKCU\\Software\\Classes\\*\\shellex\\ContextMenuHandlers\\Bandizip\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
+            "reg add \"HKCU\\Software\\Classes\\Folder\\shellex\\ContextMenuHandlers\\Bandizip\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f"
         ]
     },
     "uninstaller": {
         "script": [
-            "regsvr32 /s /u \"$dir\\bdzshl64.dll\"",
-            "regsvr32 /s /u \"$dir\\bdzshl32.dll\""
+            "reg delete \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
+            "reg delete \"HKCU\\Software\\Classes\\*\\shellex\\ContextMenuHandlers\\Bandizip\" /f",
+            "reg delete \"HKCU\\Software\\Classes\\Folder\\shellex\\ContextMenuHandlers\\Bandizip\" /f"
         ]
     },
     "bin": [
