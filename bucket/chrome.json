@@ -14,11 +14,8 @@
     },
     "installer": {
         "script": [
-            "Expand-7zipArchive \"$dir\\chrome_138.0.7204.184_win64.tar.gz\" \"$dir\"",
-            "Expand-7zipArchive \"$dir\\chrome_138.0.7204.184_win64.tar\" \"$dir\" -Removal",
             "Move-Item \"$dir\\138.0.7204.184\\*\" \"$dir\" -Force",
-            "Remove-Item \"$dir\\138.0.7204.184\" -Recurse -Force",
-            "Remove-Item \"$dir\\chrome_138.0.7204.184_win64.tar.gz\" -Force"
+            "Remove-Item \"$dir\\138.0.7204.184\" -Recurse -Force"
         ]
     },
     "bin": [
