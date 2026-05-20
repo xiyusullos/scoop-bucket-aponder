@@ -1,0 +1,39 @@
+{
+    "version": "138.0.7204.184",
+    "description": "Fast, secure, and free web browser, built for the modern web.",
+    "homepage": "https://www.google.com/chrome/",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.google.com/chrome/terms/"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ulixee/chrome-versions/releases/download/138.0.7204.184/chrome_138.0.7204.184_win64.tar.gz",
+            "hash": "C66447DDD78D5D4BC07252D80C1FF7BEBA505983176CBD5B5856A86579C8DAFB"
+        }
+    },
+    "installer": {
+        "script": [
+            "Expand-7zipArchive \"$dir\\chrome_138.0.7204.184_win64.tar.gz\" \"$dir\"",
+            "Expand-7zipArchive \"$dir\\chrome_138.0.7204.184_win64.tar\" \"$dir\" -Removal",
+            "Move-Item \"$dir\\138.0.7204.184\\*\" \"$dir\" -Force",
+            "Remove-Item \"$dir\\138.0.7204.184\" -Recurse -Force",
+            "Remove-Item \"$dir\\chrome_138.0.7204.184_win64.tar.gz\" -Force"
+        ]
+    },
+    "bin": [
+        [
+            "chrome.exe",
+            "chrome"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "chrome.exe",
+            "Google Chrome"
+        ]
+    ],
+    "env_set": {
+        "CHROME_EXECUTABLE": "$dir\\chrome.exe"
+    }
+}
