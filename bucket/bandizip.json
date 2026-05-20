@@ -13,7 +13,17 @@
         }
     },
     "installer": {
-        "script": "Expand-7zipArchive \"$dir\\bandizip@5.17.exe\" \"$dir\" -Removal"
+        "script": [
+            "Expand-7zipArchive \"$dir\\bandizip@5.17.exe\" \"$dir\" -Removal",
+            "regsvr32 /s \"$dir\\bdzshl64.dll\"",
+            "regsvr32 /s \"$dir\\bdzshl32.dll\""
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "regsvr32 /s /u \"$dir\\bdzshl64.dll\"",
+            "regsvr32 /s /u \"$dir\\bdzshl32.dll\""
+        ]
     },
     "bin": [
         [
