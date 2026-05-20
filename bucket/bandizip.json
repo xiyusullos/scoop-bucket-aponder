@@ -7,7 +7,9 @@
         "url": "https://en.bandisoft.com/bandizip/eula/"
     },
     "notes": [
-        "Bandizip 5.17 is an older version. The latest version is available at https://www.bandizip.com/."
+        "Bandizip 5.17 is an older version. The latest version is available at https://www.bandizip.com/.",
+        "",
+        "If the right-click context menu does not appear, try restarting Explorer or logging out and back in."
     ],
     "architecture": {
         "64bit": {
@@ -28,15 +30,17 @@
             "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /ve /d \"Bandizip Shell Extension\" /f",
             "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\\InprocServer32\" /ve /d \"$dir\\bdzshl64.dll\" /f",
             "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\\InprocServer32\" /v ThreadingModel /d Apartment /f",
-            "reg add \"HKCU\\Software\\Classes\\*\\shellex\\ContextMenuHandlers\\Bandizip\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
-            "reg add \"HKCU\\Software\\Classes\\Folder\\shellex\\ContextMenuHandlers\\Bandizip\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f"
+            "reg add \"HKCU\\Software\\Classes\\*\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
+            "reg add \"HKCU\\Software\\Classes\\Directory\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
+            "reg add \"HKCU\\Software\\Classes\\Directory\\ShellEx\\DragDropHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f"
         ]
     },
     "uninstaller": {
         "script": [
             "reg delete \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
-            "reg delete \"HKCU\\Software\\Classes\\*\\shellex\\ContextMenuHandlers\\Bandizip\" /f",
-            "reg delete \"HKCU\\Software\\Classes\\Folder\\shellex\\ContextMenuHandlers\\Bandizip\" /f"
+            "reg delete \"HKCU\\Software\\Classes\\*\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /f",
+            "reg delete \"HKCU\\Software\\Classes\\Directory\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /f",
+            "reg delete \"HKCU\\Software\\Classes\\Directory\\ShellEx\\DragDropHandlers\\AABdzCtx\" /f"
         ]
     },
     "bin": "Bandizip.exe",
