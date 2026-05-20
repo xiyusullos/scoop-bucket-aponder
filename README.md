@@ -1,11 +1,11 @@
-# aponder-bucket
+# scoop-bucket-aponder
 
 Personal Scoop bucket for archiving specific application versions.
 
 ## Usage
 
 ```powershell
-scoop bucket add aponder C:\Users\x\my-bucket
+scoop bucket add aponder https://github.com/xiyusullos/scoop-bucket-aponder.git
 scoop install aponder/chrome
 scoop install aponder/wechat
 ```
