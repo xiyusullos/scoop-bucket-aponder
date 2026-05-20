@@ -33,7 +33,8 @@
             "reg add \"HKCU\\Software\\Classes\\Directory\\ShellEx\\DragDropHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
             "reg add \"HKCU\\Software\\Classes\\Directory\\Background\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
             "reg add \"HKCU\\Software\\Classes\\Drive\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
-            "reg add \"HKCU\\Software\\Classes\\Drive\\ShellEx\\DragDropHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f"
+            "reg add \"HKCU\\Software\\Classes\\Drive\\ShellEx\\DragDropHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
+            "foreach ($ext in @('.7z','.alz','.bz2','.cab','.egg','.gz','.iso','.lzh','.rar','.tar','.tbz2','.tgz','.xpi','.zip')) { $progId = \"Bandizip$ext\"; reg add \"HKCU\\Software\\Classes\\$ext\" /ve /d $progId /f; reg add \"HKCU\\Software\\Classes\\$progId\" /ve /d \"Bandizip Archive\" /f; reg add \"HKCU\\Software\\Classes\\$progId\\DefaultIcon\" /ve /d \"`\"$dir\\Bandizip64.exe`\",1\" /f; reg add \"HKCU\\Software\\Classes\\$progId\\shell\\open\\command\" /ve /d \"`\"$dir\\Bandizip64.exe`\" `\"%1`\"\" /f }"
         ]
     },
     "uninstaller": {
@@ -44,7 +45,8 @@
             "reg delete \"HKCU\\Software\\Classes\\Directory\\ShellEx\\DragDropHandlers\\AABdzCtx\" /f",
             "reg delete \"HKCU\\Software\\Classes\\Directory\\Background\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /f",
             "reg delete \"HKCU\\Software\\Classes\\Drive\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /f",
-            "reg delete \"HKCU\\Software\\Classes\\Drive\\ShellEx\\DragDropHandlers\\AABdzCtx\" /f"
+            "reg delete \"HKCU\\Software\\Classes\\Drive\\ShellEx\\DragDropHandlers\\AABdzCtx\" /f",
+            "foreach ($ext in @('.7z','.alz','.bz2','.cab','.egg','.gz','.iso','.lzh','.rar','.tar','.tbz2','.tgz','.xpi','.zip')) { $progId = \"Bandizip$ext\"; reg delete \"HKCU\\Software\\Classes\\$ext\" /f; reg delete \"HKCU\\Software\\Classes\\$progId\" /f }"
         ]
     },
     "bin": "Bandizip64.exe",
