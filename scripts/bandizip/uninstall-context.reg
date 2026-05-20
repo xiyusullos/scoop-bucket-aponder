@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[-HKEY_CURRENT_USER\Software\Classes\CLSID\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}]
+[-HKEY_CURRENT_USER\Software\Classes\*\ShellEx\ContextMenuHandlers\AABdzCtx]
+[-HKEY_CURRENT_USER\Software\Classes\Directory\ShellEx\ContextMenuHandlers\AABdzCtx]
+[-HKEY_CURRENT_USER\Software\Classes\Directory\ShellEx\DragDropHandlers\AABdzCtx]
+[-HKEY_CURRENT_USER\Software\Classes\Directory\Background\ShellEx\ContextMenuHandlers\AABdzCtx]
+[-HKEY_CURRENT_USER\Software\Classes\Drive\ShellEx\ContextMenuHandlers\AABdzCtx]
+[-HKEY_CURRENT_USER\Software\Classes\Drive\ShellEx\DragDropHandlers\AABdzCtx]

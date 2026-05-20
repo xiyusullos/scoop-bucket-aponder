@@ -9,7 +9,8 @@
     "notes": [
         "Bandizip 5.17 is an older version. The latest version is available at https://www.bandizip.com/.",
         "",
-        "If the right-click context menu does not appear, try restarting Explorer or logging out and back in."
+        "To re-register context menu and file associations, run:",
+        "reg import \"$dir\\install-context.reg\" && reg import \"$dir\\install-associations.reg\""
     ],
     "architecture": {
         "64bit": {
@@ -23,30 +24,26 @@
             ]
         }
     },
-    "installer": {
-        "script": [
-            "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /ve /d \"Bandizip Shell Extension\" /f",
-            "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\\InprocServer32\" /ve /d \"$dir\\bdzshl64.dll\" /f",
-            "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\\InprocServer32\" /v ThreadingModel /d Apartment /f",
-            "reg add \"HKCU\\Software\\Classes\\*\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
-            "reg add \"HKCU\\Software\\Classes\\Directory\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
-            "reg add \"HKCU\\Software\\Classes\\Directory\\ShellEx\\DragDropHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
-            "reg add \"HKCU\\Software\\Classes\\Directory\\Background\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
-            "reg add \"HKCU\\Software\\Classes\\Drive\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
-            "reg add \"HKCU\\Software\\Classes\\Drive\\ShellEx\\DragDropHandlers\\AABdzCtx\" /ve /d \"{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
-            "foreach ($ext in @('.001','.7z','.ace','.aes','.alz','.arj','.bh','.bz','.bz2','.cab','.egg','.gz','.lha','.lzh','.lzma','.pma','.rar','.tar','.tbz','.tbz2','.tgz','.tlz','.txz','.xz','.z','.zip','.zipx')) { $progId = \"Bandizip$ext\"; reg add \"HKCU\\Software\\Classes\\$ext\" /ve /d $progId /f; reg add \"HKCU\\Software\\Classes\\$progId\" /ve /d \"Bandizip Archive\" /f; reg add \"HKCU\\Software\\Classes\\$progId\\DefaultIcon\" /ve /d \"`\"$dir\\Bandizip64.exe`\",1\" /f; reg add \"HKCU\\Software\\Classes\\$progId\\shell\\open\\command\" /ve /d \"`\"$dir\\Bandizip64.exe`\" `\"%1`\"\" /f }"
-        ]
-    },
+    "post_install": [
+        "$dirpath = \"$dir\".Replace('\\', '\\\\')",
+        "$exepath = \"$dir\\Bandizip64.exe\".Replace('\\', '\\\\')",
+        "$dllpath = \"$dir\\bdzshl64.dll\".Replace('\\', '\\\\')",
+        "'install-context','uninstall-context','install-associations','uninstall-associations' | ForEach-Object {",
+        "  if (Test-Path \"$bucketsdir\\aponder\\scripts\\bandizip\\$_.reg\") {",
+        "    $content = Get-Content \"$bucketsdir\\aponder\\scripts\\bandizip\\$_.reg\"",
+        "    $content = $content.Replace('$bandizipdir', $dirpath)",
+        "    $content = $content.Replace('$bandizipexe', $exepath)",
+        "    $content = $content.Replace('$bandizipdll', $dllpath)",
+        "    $content | Set-Content -Path \"$dir\\$_.reg\"",
+        "  }",
+        "}",
+        "reg import \"$dir\\install-context.reg\"",
+        "reg import \"$dir\\install-associations.reg\""
+    ],
     "uninstaller": {
         "script": [
-            "reg delete \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /f",
-            "reg delete \"HKCU\\Software\\Classes\\*\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /f",
-            "reg delete \"HKCU\\Software\\Classes\\Directory\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /f",
-            "reg delete \"HKCU\\Software\\Classes\\Directory\\ShellEx\\DragDropHandlers\\AABdzCtx\" /f",
-            "reg delete \"HKCU\\Software\\Classes\\Directory\\Background\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /f",
-            "reg delete \"HKCU\\Software\\Classes\\Drive\\ShellEx\\ContextMenuHandlers\\AABdzCtx\" /f",
-            "reg delete \"HKCU\\Software\\Classes\\Drive\\ShellEx\\DragDropHandlers\\AABdzCtx\" /f",
-            "foreach ($ext in @('.001','.7z','.ace','.aes','.alz','.arj','.bh','.bz','.bz2','.cab','.egg','.gz','.lha','.lzh','.lzma','.pma','.rar','.tar','.tbz','.tbz2','.tgz','.tlz','.txz','.xz','.z','.zip','.zipx')) { $progId = \"Bandizip$ext\"; reg delete \"HKCU\\Software\\Classes\\$ext\" /f; reg delete \"HKCU\\Software\\Classes\\$progId\" /f }"
+            "if (Test-Path \"$dir\\uninstall-context.reg\") { reg import \"$dir\\uninstall-context.reg\" }",
+            "if (Test-Path \"$dir\\uninstall-associations.reg\") { reg import \"$dir\\uninstall-associations.reg\" }"
         ]
     },
     "bin": "Bandizip64.exe",

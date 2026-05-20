@@ -1,0 +1,326 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Classes\.001]
+@="Bandizip.001"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.001]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.001\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.001\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.7z]
+@="Bandizip.7z"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.7z]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.7z\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.7z\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.ace]
+@="Bandizip.ace"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.ace]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.ace\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.ace\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.aes]
+@="Bandizip.aes"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.aes]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.aes\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.aes\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.alz]
+@="Bandizip.alz"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.alz]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.alz\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.alz\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.arj]
+@="Bandizip.arj"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.arj]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.arj\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.arj\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.bh]
+@="Bandizip.bh"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.bh]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.bh\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.bh\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.bz]
+@="Bandizip.bz"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.bz]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.bz\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.bz\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.bz2]
+@="Bandizip.bz2"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.bz2]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.bz2\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.bz2\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.cab]
+@="Bandizip.cab"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.cab]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.cab\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.cab\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.egg]
+@="Bandizip.egg"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.egg]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.egg\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.egg\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.gz]
+@="Bandizip.gz"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.gz]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.gz\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.gz\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.lha]
+@="Bandizip.lha"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.lha]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.lha\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.lha\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.lzh]
+@="Bandizip.lzh"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.lzh]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.lzh\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.lzh\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.lzma]
+@="Bandizip.lzma"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.lzma]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.lzma\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.lzma\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.pma]
+@="Bandizip.pma"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.pma]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.pma\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.pma\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.rar]
+@="Bandizip.rar"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.rar]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.rar\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.rar\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.tar]
+@="Bandizip.tar"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tar]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tar\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tar\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.tbz]
+@="Bandizip.tbz"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tbz]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tbz\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tbz\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.tbz2]
+@="Bandizip.tbz2"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tbz2]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tbz2\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tbz2\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.tgz]
+@="Bandizip.tgz"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tgz]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tgz\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tgz\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.tlz]
+@="Bandizip.tlz"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tlz]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tlz\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.tlz\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.txz]
+@="Bandizip.txz"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.txz]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.txz\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.txz\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.xz]
+@="Bandizip.xz"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.xz]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.xz\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.xz\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.z]
+@="Bandizip.z"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.z]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.z\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.z\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.zip]
+@="Bandizip.zip"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.zip]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.zip\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.zip\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.zipx]
+@="Bandizip.zipx"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.zipx]
+@="Bandizip Archive"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.zipx\DefaultIcon]
+@="\"$bandizipexe\",1"
+
+[HKEY_CURRENT_USER\Software\Classes\Bandizip.zipx\shell\open\command]
+@="\"$bandizipexe\" \"%1\""
+
