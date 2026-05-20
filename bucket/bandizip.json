@@ -1,20 +1,30 @@
 {
     "version": "5.17",
-    "description": "A powerful, fast, and free archiver for Windows",
+    "description": "An archiver which provides fast speed and convenient features",
     "homepage": "https://www.bandizip.com/",
     "license": {
         "identifier": "Freeware",
-        "url": "https://www.bandizip.com/eula/"
+        "url": "https://en.bandisoft.com/bandizip/eula/"
     },
+    "notes": [
+        "Bandizip 5.17 is an older version. The latest version is available at https://www.bandizip.com/."
+    ],
     "architecture": {
         "64bit": {
             "url": "https://media.githubusercontent.com/media/xiyusullos/scoop-bucket-bin/main/bandizip/bandizip@5.17.exe",
-            "hash": "3185AFAD4B418E9F3BD8C76232407EA6B77DDC6659FEA746AB606F57F18C7BED"
+            "hash": "3185AFAD4B418E9F3BD8C76232407EA6B77DDC6659FEA746AB606F57F18C7BED",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\bandizip@5.17.exe\" \"$dir\" -Removal",
+                "Rename-Item \"$dir\\Bandizip64.exe\" 'Bandizip.exe'",
+                "Remove-Item \"$dir\\Bandizip32.exe\"",
+                "Remove-Item \"$dir\\RegDll32.exe\", \"$dir\\RegDll64.exe\" -Force -ErrorAction SilentlyContinue",
+                "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse -Force -ErrorAction SilentlyContinue",
+                "if (!(Test-Path \"$persist_dir\\Bandizip.ini\")) { New-Item \"$dir\\Bandizip.ini\" -ItemType File | Out-Null }"
+            ]
         }
     },
     "installer": {
         "script": [
-            "Expand-7zipArchive \"$dir\\bandizip@5.17.exe\" \"$dir\" -Removal",
             "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\" /ve /d \"Bandizip Shell Extension\" /f",
             "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\\InprocServer32\" /ve /d \"$dir\\bdzshl64.dll\" /f",
             "reg add \"HKCU\\Software\\Classes\\CLSID\\{5B69A6B4-393B-459C-8EBB-214237A9E7AC}\\InprocServer32\" /v ThreadingModel /d Apartment /f",
@@ -29,20 +39,12 @@
             "reg delete \"HKCU\\Software\\Classes\\Folder\\shellex\\ContextMenuHandlers\\Bandizip\" /f"
         ]
     },
-    "bin": [
-        [
-            "Bandizip64.exe",
-            "bandizip"
-        ],
-        [
-            "bz.exe",
-            "bz"
-        ]
-    ],
+    "bin": "Bandizip.exe",
     "shortcuts": [
         [
-            "Bandizip64.exe",
+            "Bandizip.exe",
             "Bandizip"
         ]
-    ]
+    ],
+    "persist": "Bandizip.ini"
 }
