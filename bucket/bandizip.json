@@ -1,0 +1,34 @@
+{
+    "version": "5.17",
+    "description": "A powerful, fast, and free archiver for Windows",
+    "homepage": "https://www.bandizip.com/",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.bandizip.com/eula/"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://raw.githubusercontent.com/xiyusullos/scoop-bucket-bin/main/bandizip/bandizip@5.17.exe",
+            "hash": "3185AFAD4B418E9F3BD8C76232407EA6B77DDC6659FEA746AB606F57F18C7BED"
+        }
+    },
+    "installer": {
+        "script": "Expand-7zipArchive \"$dir\\bandizip@5.17.exe\" \"$dir\" -Removal"
+    },
+    "bin": [
+        [
+            "Bandizip64.exe",
+            "bandizip"
+        ],
+        [
+            "bz.exe",
+            "bz"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "Bandizip64.exe",
+            "Bandizip"
+        ]
+    ]
+}
